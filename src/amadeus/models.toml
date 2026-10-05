@@ -1,0 +1,44 @@
+# Amadeus Model Registry
+# Pre-configured model profiles for local runtime (llama.cpp) and Ollama.
+#
+# Top-level default model profile name.
+default = "general"
+
+# --- Profiles ---
+
+# General-purpose daily assistant: balanced speed, intelligence, and context length.
+[profiles.general]
+description = "General-purpose daily assistant (Qwen3 8B)"
+repo = "Qwen/Qwen3-8B-GGUF"
+file = "Qwen3-8B-Q4_K_M.gguf"
+ollama = "qwen3:8b"
+ctx = 16384
+min_vram_gb = 6
+
+# High-capability reasoning and MoE profile with expert CPU offloading.
+[profiles.power]
+description = "High-capability reasoning and MoE model (Qwen3 30B A3B)"
+repo = "Qwen/Qwen3-30B-A3B-GGUF"
+file = "Qwen3-30B-A3B-Q4_K_M.gguf"
+ollama = "qwen3:30b"
+n_cpu_moe = 30
+ctx = 16384
+min_vram_gb = 6
+
+# Specialized code generation and instruction following.
+[profiles.coder]
+description = "Specialized code generation and editing (Qwen2.5 Coder 7B)"
+repo = "Qwen/Qwen2.5-Coder-7B-Instruct-GGUF"
+file = "qwen2.5-coder-7b-instruct-q4_k_m.gguf"
+ollama = "qwen2.5-coder:7b"
+ctx = 16384
+min_vram_gb = 6
+
+# Lightweight profile for systems with minimal GPU memory.
+[profiles.lite]
+description = "Fast, lightweight model for low VRAM systems (Qwen3 4B)"
+repo = "Qwen/Qwen3-4B-GGUF"
+file = "Qwen3-4B-Q4_K_M.gguf"
+ollama = "qwen3:4b"
+ctx = 8192
+min_vram_gb = 3

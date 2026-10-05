@@ -1,0 +1,21 @@
+# ---- Amadeus local state (never commit) ----
+.runtime/
+bin/
+models/
+data/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
